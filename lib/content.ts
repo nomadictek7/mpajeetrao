@@ -19,7 +19,10 @@ export const site = {
     x: "https://x.com/Drajeetgopchade",
     instagram: "https://www.instagram.com/drajeetgopchade",
     youtube: "https://www.youtube.com/@Drajeetgopchade0618",
+    linkedin: "", // not found publicly; add it from /admin/content/profile
   },
+  // Feeds the latest videos on /social (YouTube's public RSS feed needs the channel ID, not the @handle).
+  youtubeChannelId: "UC50AjcXmHebnOOG3E_zjiuQ",
   contact: {
     email: "dr.agopchade@sansad.nic.in",
     phone: "+91 77984 84618",
@@ -44,6 +47,7 @@ export const nav: { id: string; label: T }[] = [
   { id: "press", label: { en: "Press", mr: "बातम्या" } },
   { id: "gallery", label: { en: "Gallery", mr: "छायाचित्रे" } },
   { id: "blog", label: { en: "Blog", mr: "ब्लॉग" } },
+  { id: "social", label: { en: "Social", mr: "सोशल मीडिया" } },
   { id: "contact", label: { en: "Contact", mr: "संपर्क" } },
 ];
 
@@ -101,6 +105,19 @@ export const ui = {
   nextPhoto: { en: "Next photo", mr: "पुढील छायाचित्र" },
   closePhoto: { en: "Close", mr: "बंद करा" },
   viewEvent: { en: "View details", mr: "तपशील पहा" },
+  social: { en: "Social Media", mr: "सोशल मीडिया" },
+  socialSub: {
+    en: "Latest updates from Dr. Gopchade's official social media accounts.",
+    mr: "डॉ. गोपछडे यांच्या अधिकृत सोशल मीडिया खात्यांवरील ताज्या घडामोडी.",
+  },
+  latestVideos: { en: "Latest on YouTube", mr: "यूट्यूबवरील नवीन व्हिडिओ" },
+  featuredPosts: { en: "Featured posts", mr: "निवडक पोस्ट" },
+  followOn: { en: "Follow on", mr: "फॉलो करा:" },
+  openProfile: { en: "Open profile", mr: "प्रोफाइल उघडा" },
+  feedFallback: {
+    en: "If the feed doesn't load, open the page directly.",
+    mr: "फीड न दिसल्यास थेट पेज उघडा.",
+  },
   parliament: { en: "In Parliament", mr: "संसदेतील कामगिरी" },
   parliamentSub: {
     en: "Attendance and questions in the Rajya Sabha since taking office in April 2024.",
@@ -501,6 +518,10 @@ export const events: { date: string; title: T; place: T; image?: string; href?: 
     image: "/images/gallery/aiims-nagpur-gadkari.jpg",
   },
 ];
+
+// Posts embedded under "Featured posts" on /social. Instagram and LinkedIn have
+// no public profile feed, so the office picks posts from /admin/content/social.
+export const socialPosts: { url: string }[] = [];
 
 export const donate = [
   { label: "PM CARES", href: "https://www.pmcares.gov.in/" },

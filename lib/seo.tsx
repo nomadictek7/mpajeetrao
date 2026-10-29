@@ -69,7 +69,7 @@ export function personJsonLd({ profile }: Pick<SiteContent, "profile">) {
       { "@type": "CollegeOrUniversity", name: "Government Medical College, Aurangabad" },
     ],
     homeLocation: { "@type": "Place", name: "Nanded, Maharashtra" },
-    sameAs: [profile.facebook, profile.x, profile.instagram, profile.youtube, wikipedia, wikidata].filter(Boolean),
+    sameAs: [profile.facebook, profile.x, profile.instagram, profile.youtube, profile.linkedin, wikipedia, wikidata].filter(Boolean),
   };
 }
 

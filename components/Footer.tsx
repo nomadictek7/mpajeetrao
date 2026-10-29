@@ -17,6 +17,7 @@ export default function Footer() {
       ["x", "X", site.x],
       ["instagram", "Instagram", site.instagram],
       ["youtube", "YouTube", site.youtube],
+      ["linkedin", "LinkedIn", site.linkedin],
     ] as [Social, string, string][]
   ).filter(([, , href]) => href);
 

@@ -53,6 +53,7 @@ export const sections: SectionDef[] = [
       { key: "x", label: "X (Twitter) link", kind: "url" },
       { key: "instagram", label: "Instagram link", kind: "url" },
       { key: "youtube", label: "YouTube link", kind: "url" },
+      { key: "linkedin", label: "LinkedIn link", kind: "url" },
     ],
   },
   {
@@ -199,6 +200,31 @@ export const sections: SectionDef[] = [
     ],
   },
   {
+    key: "social",
+    title: "Social media posts",
+    description:
+      "Posts shown under “Featured posts” on the Social Media page. YouTube videos, the Facebook page and X update by themselves; add Instagram and LinkedIn posts here.",
+    anchor: "/social",
+    fields: [
+      {
+        key: "",
+        label: "Posts",
+        kind: "list",
+        itemName: "post",
+        summary: (x: { url: string }) => x.url,
+        newItem: () => ({ url: "" }),
+        item: [
+          {
+            key: "url",
+            label: "Post link",
+            kind: "url",
+            help: "Paste the link of an Instagram, LinkedIn, X, Facebook or YouTube post. For LinkedIn, use the post's ⋯ menu → “Copy link to post”.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     key: "donate",
     title: "Footer links",
     description: "The “Contribute” links in the footer.",
@@ -235,6 +261,8 @@ export const sections: SectionDef[] = [
       { key: "gallery", label: "Gallery heading", kind: "bi" },
       { key: "fromBlog", label: "Blog heading (homepage)", kind: "bi" },
       { key: "events", label: "Events heading", kind: "bi" },
+      { key: "social", label: "Social media heading", kind: "bi" },
+      { key: "socialSub", label: "Social media intro", kind: "biArea" },
       { key: "contact", label: "Contact heading", kind: "bi" },
       { key: "contactSub", label: "Contact intro", kind: "biArea" },
       { key: "newsletter", label: "Footer: newsletter line", kind: "bi" },

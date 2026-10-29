@@ -25,6 +25,7 @@ export type SiteContent = {
     x: string;
     instagram: string;
     youtube: string;
+    linkedin: string;
   };
   hero: { title: T; text: T }[];
   about: { heading: T; body: T[]; stats: { value: string; valueMr: string; label: T }[] };
@@ -32,6 +33,7 @@ export type SiteContent = {
   journey: { year: string; title: T; text: T }[];
   press: { title: T; date: string; href: string; image: string }[];
   events: { date: string; title: T; place: T; image: string; href: string }[];
+  social: { url: string }[];
   donate: { label: string; href: string }[];
   labels: Record<LabelKey, T>;
 };
@@ -43,6 +45,7 @@ export type SectionKey = keyof SiteContent;
 export const labelKeys = [
   "listen", "act", "share",
   "impact", "parliament", "parliamentSub", "journey", "latestPress", "gallery", "fromBlog", "events",
+  "social", "socialSub",
   "contact", "contactSub",
   "newsletter", "quickLinks", "donate", "follow",
   "questionsTitle", "questionsIntro",
@@ -74,6 +77,7 @@ export const defaultContent: SiteContent = {
   journey: d.journey,
   press: d.press.map((x) => ({ ...x, image: x.image ?? "" })),
   events: d.events.map((x) => ({ ...x, image: x.image ?? "", href: x.href ?? "" })),
+  social: d.socialPosts,
   donate: d.donate,
   labels: Object.fromEntries(labelKeys.map((k) => [k, d.ui[k]])) as Record<LabelKey, T>,
 };
@@ -86,7 +90,7 @@ const t: T = { en: "", mr: "" };
 const shapes: { [K in SectionKey]: unknown } = {
   profile: {
     name: t, shortName: t, role: t, party: t, portrait: "img", logo: "img", email: "", phone: "", address: t, permanentAddress: t,
-    facebook: "url", x: "url", instagram: "url", youtube: "url",
+    facebook: "url", x: "url", instagram: "url", youtube: "url", linkedin: "url",
   },
   hero: [{ title: t, text: t }],
   about: { heading: t, body: [t], stats: [{ value: "", valueMr: "", label: t }] },
@@ -94,6 +98,7 @@ const shapes: { [K in SectionKey]: unknown } = {
   journey: [{ year: "", title: t, text: t }],
   press: [{ title: t, date: "", href: "url", image: "img" }],
   events: [{ date: "", title: t, place: t, image: "img", href: "url" }],
+  social: [{ url: "url" }],
   donate: [{ label: "", href: "url" }],
   labels: Object.fromEntries(labelKeys.map((k) => [k, t])),
 };
