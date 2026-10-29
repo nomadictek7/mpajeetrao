@@ -277,6 +277,41 @@ export const journey: { year: string; title: T; text: T }[] = [
 export const press: { title: T; date: string; href: string; image?: string }[] = [
   {
     title: {
+      en: "At the 12th BRICS Parliamentary Forum, on India's growing role for the Global South",
+      mr: "१२व्या ब्रिक्स संसदीय मंचात भारताच्या वाढत्या जागतिक भूमिकेवर भाष्य",
+    },
+    date: "2026-10",
+    href: "https://newsable.asianetnews.com/india/brics-parliamentary-forum-emphasizes-people-centric-governance-models-articleshow-9wxbr6e",
+    image: "/images/press/rajya-sabha-portrait.jpg",
+  },
+  {
+    title: {
+      en: "Visits drought-hit farmers in Deglur; thanks CM for ₹5,000 advance relief",
+      mr: "देगलूर तालुक्यातील दुष्काळग्रस्त शेतकऱ्यांची भेट; राज्य सरकार शेतकऱ्यांच्या पाठीशी खंबीरपणे उभे",
+    },
+    date: "2026-10",
+    href: "https://pudhari.news/maharashtra/marathwada/nanded/devendra-fadnavis-5000-farmer-relief-ajit-gopchade-ab96",
+    image: "/images/gallery/farmers-nanded.jpg",
+  },
+  {
+    title: {
+      en: "External Affairs Minister S. Jaishankar meets MP LEAD Fellows",
+      mr: "परराष्ट्र मंत्री एस. जयशंकर यांचा एमपी लीड फेलोंशी परराष्ट्र धोरणावर संवाद",
+    },
+    date: "2026-08",
+    href: "https://www.newkerala.com/news/a/interest-indian-foreign-policy-commendable-eam-jaishankar-meets-976.htm",
+  },
+  {
+    title: {
+      en: "Vice-President C.P. Radhakrishnan addresses the 40 MP LEAD Fellows",
+      mr: "उपराष्ट्रपती सी. पी. राधाकृष्णन यांचा ४० एमपी लीड फेलोंशी संवाद",
+    },
+    date: "2026-07",
+    href: "https://ddindia.co.in/2026/07/leadership-is-about-service-not-authority-vice-president-tells-mp-lead-fellows/",
+    image: "/images/gallery/mp-lead-vice-president.jpg",
+  },
+  {
+    title: {
       en: "Chief Secretary to review MP's pending representations in 41 meetings",
       mr: "खासदारांच्या प्रलंबित निवेदनांवर मुख्य सचिव ४१ आढावा बैठका घेणार",
     },
@@ -292,6 +327,15 @@ export const press: { title: T; date: string; href: string; image?: string }[] =
     date: "2026-04",
     href: "https://www.navarashtra.com/maharashtra/nanded/mp-gopchade-demands-holy-city-status-for-nanded-place-of-great-significance-to-the-sikh-1189251.html",
     image: "/images/press/hazur-sahib-nanded.jpg",
+  },
+  {
+    title: {
+      en: "Meets Home Minister Amit Shah; seeks official-language status for Indian Sign Language",
+      mr: "गृहमंत्री अमित शहा यांची भेट; भारतीय सांकेतिक भाषेला अधिकृत भाषेचा दर्जा देण्याची मागणी",
+    },
+    date: "2026-02",
+    href: "https://newsable.asianetnews.com/india/mp-ajeet-gopchade-meets-amit-shah-urges-official-status-for-isl-articleshow-pfn0clu",
+    image: "/images/gallery/amit-shah-meeting.jpg",
   },
   {
     title: {
@@ -315,6 +359,23 @@ export const galleryCategories: { id: string; label: T }[] = [
 // Photos from the MP's and officials' X posts, news coverage and Wikimedia
 // Commons.
 export const gallery: { cat: string; caption: T; src?: string }[] = [
+  {
+    cat: "events",
+    // Vice-President's Secretariat photo, via DD News.
+    caption: {
+      en: "Vice-President C.P. Radhakrishnan addressing the MP LEAD Fellows, New Delhi, July 2026",
+      mr: "उपराष्ट्रपती सी. पी. राधाकृष्णन एमपी लीड फेलोंना संबोधित करताना, नवी दिल्ली, जुलै २०२६",
+    },
+    src: "/images/gallery/mp-lead-vice-president.jpg",
+  },
+  {
+    cat: "leaders",
+    caption: {
+      en: "With Union Home Minister Amit Shah, New Delhi, February 2026",
+      mr: "केंद्रीय गृहमंत्री अमित शहा यांच्यासोबत, नवी दिल्ली, फेब्रुवारी २०२६",
+    },
+    src: "/images/gallery/amit-shah-meeting.jpg",
+  },
   {
     cat: "leaders",
     caption: { en: "With Prime Minister Narendra Modi, New Delhi, December 2024", mr: "पंतप्रधान नरेंद्र मोदी यांच्यासोबत, नवी दिल्ली, डिसेंबर २०२४" },
