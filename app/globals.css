@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  /* Palette taken from amitshah.co.in (style.css) */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f0f1f1; /* --gry_color */
+  --ink: #262626; /* --min_color */
+  --muted: #4e4e4e;
+  --line: #ebebeb;
+  --saffron: #ff7e54; /* --org_color, brand fills */
+  --saffron-deep: #ff6f60; /* hover */
+  --saffron-soft: #f2b591; /* --org2_color */
+  --on-brand: #0d0d0d; /* text on orange fills (white fails contrast) */
+  --accent: #c2461c; /* orange text on light backgrounds */
+  --saffron-bright: #ff7e54; /* orange text on dark sections */
+  --dark: #0d0d0d; /* --dark_color */
+  --green: #138808;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d0d0d;
+  --surface: #121212; /* --dark_color2 */
+  --surface-2: #1a1a1a;
+  --ink: #f1f1f1;
+  --muted: #9d9d9d;
+  --line: #262626;
+  --accent: #ff7e54;
+  --dark: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0d0d;
+    --surface: #121212;
+    --surface-2: #1a1a1a;
+    --ink: #f1f1f1;
+    --muted: #9d9d9d;
+    --line: #262626;
+    --accent: #ff7e54;
+    --dark: #121212;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-saffron: var(--saffron);
+  --color-saffron-deep: var(--saffron-deep);
+  --color-accent: var(--accent);
+  --color-saffron-bright: var(--saffron-bright);
+  --color-dark: var(--dark);
+  --color-saffron-soft: var(--saffron-soft);
+  --color-on-brand: var(--on-brand);
+  --color-green: var(--green);
+  --font-sans: var(--font-body), var(--font-deva), system-ui, sans-serif;
+  --font-display: var(--font-head), var(--font-deva), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.tricolor {
+  background: linear-gradient(90deg, #ff9933 0 33.3%, #ffffff 33.3% 66.6%, #138808 66.6%);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-in { animation: fade-in 0.5s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in { animation: none; }
+}
