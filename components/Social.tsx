@@ -56,7 +56,9 @@ export function SocialFeeds({ videos, embeds }: { videos: Video[]; embeds: Embed
   const theme = dark ? "dark" : "light";
   // Re-mounting on theme change makes X redraw the embeds in the matching colours.
   const xRef = useXWidgets(theme);
-  const xHandle = profile.x.split("/").filter(Boolean).pop() ?? "";
+  const handle = (url: string) => (url ? (new URL(url).pathname.split("/").filter(Boolean)[0] ?? "") : "");
+  const xHandle = handle(profile.x);
+  const igHandle = handle(profile.instagram);
 
   const profiles = (
     [
@@ -90,7 +92,7 @@ export function SocialFeeds({ videos, embeds }: { videos: Video[]; embeds: Embed
               </span>
               <span className="min-w-0">
                 <span className="block font-semibold group-hover:text-accent">{name}</span>
-                <span className="block text-sm text-muted">{t(ui.openProfile)} →</span>
+                <span className="block whitespace-nowrap text-sm text-muted">{t(ui.openProfile)} →</span>
               </span>
             </a>
           </li>
@@ -133,15 +135,31 @@ export function SocialFeeds({ videos, embeds }: { videos: Video[]; embeds: Embed
         </div>
       )}
 
-      <div key={theme} ref={xRef} className="mt-14 grid gap-10 lg:grid-cols-2">
+      <div key={theme} ref={xRef} className="mt-14 grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
+        {igHandle && (
+          <div className="min-w-0">
+            <Heading>Instagram</Heading>
+            {/* Instagram's official profile embed: header plus a grid of the latest posts. */}
+            <iframe
+              title="Instagram"
+              src={`https://www.instagram.com/${igHandle}/embed/`}
+              height={480}
+              loading="lazy"
+              className="w-full max-w-[480px] rounded-2xl border border-line bg-white"
+            />
+            <Fallback href={profile.instagram} label={`@${igHandle}`} />
+          </div>
+        )}
         {profile.facebook && (
-          <div>
+          <div className="min-w-0">
             <Heading>Facebook</Heading>
+            {/* Page card only: the plugin's timeline tab stays blank for visitors who block
+                third-party cookies, which is most browsers now. */}
             <iframe
               title="Facebook"
-              src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(profile.facebook)}&tabs=timeline&width=500&height=700&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
+              src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(profile.facebook)}&width=500&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false`}
               width={500}
-              height={700}
+              height={180}
               loading="lazy"
               allow="encrypted-media; clipboard-write; picture-in-picture; web-share"
               className="w-full max-w-[500px] rounded-2xl border border-line bg-white"
@@ -150,7 +168,7 @@ export function SocialFeeds({ videos, embeds }: { videos: Video[]; embeds: Embed
           </div>
         )}
         {xHandle && (
-          <div>
+          <div className="min-w-0">
             <Heading>X</Heading>
             <div className="max-w-[550px] overflow-hidden rounded-2xl border border-line bg-surface">
               {/* X swaps this link for the timeline; visitors it won't show the timeline to (often when
@@ -177,7 +195,7 @@ export function SocialFeeds({ videos, embeds }: { videos: Video[]; embeds: Embed
         )}
 
         {embeds.length > 0 && (
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 xl:col-span-3">
             <Heading>{t(ui.featuredPosts)}</Heading>
             <div className="columns-1 gap-6 md:columns-2 xl:columns-3">
               {embeds.map((e, n) => (
