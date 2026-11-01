@@ -98,7 +98,7 @@ export default function Hero() {
       <div className="relative bg-saffron text-on-brand">
         <div className="mx-auto grid max-w-7xl grid-cols-3 text-center font-semibold">
           <Link href="/contact" className="py-3 hover:bg-saffron-deep">{t(labels.listen)}</Link>
-          <Link href="/impact" className="py-3 hover:bg-saffron-deep">{t(labels.act)}</Link>
+          <Link href="/about#impact" className="py-3 hover:bg-saffron-deep">{t(labels.act)}</Link>
           <button onClick={share} className="py-3 font-semibold hover:bg-saffron-deep">
             {copied ? t(ui.copied) : t(labels.share)}
           </button>

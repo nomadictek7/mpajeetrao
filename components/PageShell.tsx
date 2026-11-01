@@ -2,7 +2,7 @@ import { breadcrumbs, JsonLd } from "@/lib/seo";
 import Footer from "./Footer";
 import Header from "./Header";
 
-// Wraps a single-section page (/about, /impact, …) with the header, footer and breadcrumb data.
+// Wraps a single-section page (/about, /press, …) with the header, footer and breadcrumb data.
 export default function PageShell({ name, path, children }: { name: string; path: string; children: React.ReactNode }) {
   return (
     <>

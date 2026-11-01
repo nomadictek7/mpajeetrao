@@ -79,7 +79,7 @@ export const sections: SectionDef[] = [
   {
     key: "about",
     title: "About",
-    description: "Biography paragraphs and the fact cards beside them.",
+    description: "Biography paragraphs and the fact cards beside them, at the top of the About page.",
     anchor: "/about",
     fields: [
       { key: "heading", label: "Section heading", kind: "bi" },
@@ -109,15 +109,15 @@ export const sections: SectionDef[] = [
   },
   {
     key: "impact",
-    title: "Impact",
-    description: "Areas of work shown as tabs, each with text and an optional photo.",
-    anchor: "/impact",
+    title: "About: Impact",
+    description: "Achievements shown as tabs on the About page, each with text and an optional photo.",
+    anchor: "/about#impact",
     fields: [
       {
         key: "",
-        label: "Impact areas",
+        label: "Achievements",
         kind: "list",
-        itemName: "area",
+        itemName: "achievement",
         summary: (x: { title: { en: string } }) => x.title.en,
         newItem: () => ({ title: bi(), text: bi(), image: "" }),
         item: [
@@ -130,9 +130,9 @@ export const sections: SectionDef[] = [
   },
   {
     key: "journey",
-    title: "Journey",
-    description: "Timeline of milestones, from the top down.",
-    anchor: "/journey",
+    title: "About: Journey",
+    description: "Timeline of milestones at the bottom of the About page, from the top down.",
+    anchor: "/about#journey",
     fields: [
       {
         key: "",
@@ -251,12 +251,12 @@ export const sections: SectionDef[] = [
     anchor: "/",
     fields: [
       { key: "listen", label: "Hero bar: first button", kind: "bi", help: "Links to the contact form." },
-      { key: "act", label: "Hero bar: second button", kind: "bi", help: "Links to Impact." },
+      { key: "act", label: "Hero bar: second button", kind: "bi", help: "Links to the Impact section of the About page." },
       { key: "share", label: "Hero bar: share button", kind: "bi" },
-      { key: "impact", label: "Impact heading", kind: "bi" },
+      { key: "impact", label: "About page: Impact heading", kind: "bi" },
       { key: "parliament", label: "Parliament heading", kind: "bi" },
       { key: "parliamentSub", label: "Parliament intro", kind: "biArea" },
-      { key: "journey", label: "Journey heading", kind: "bi" },
+      { key: "journey", label: "About page: Journey heading", kind: "bi" },
       { key: "latestPress", label: "Press heading", kind: "bi" },
       { key: "gallery", label: "Gallery heading", kind: "bi" },
       { key: "fromBlog", label: "Blog heading (homepage)", kind: "bi" },

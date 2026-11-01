@@ -41,9 +41,7 @@ export const site = {
 export const nav: { id: string; label: T }[] = [
   { id: "home", label: { en: "Home", mr: "मुख्यपृष्ठ" } },
   { id: "about", label: { en: "About", mr: "परिचय" } },
-  { id: "impact", label: { en: "Impact", mr: "कार्य" } },
   { id: "parliament", label: { en: "Parliament", mr: "संसद" } },
-  { id: "journey", label: { en: "Journey", mr: "प्रवास" } },
   { id: "press", label: { en: "Press", mr: "बातम्या" } },
   { id: "gallery", label: { en: "Gallery", mr: "छायाचित्रे" } },
   { id: "blog", label: { en: "Blog", mr: "ब्लॉग" } },
@@ -51,7 +49,7 @@ export const nav: { id: string; label: T }[] = [
   { id: "contact", label: { en: "Contact", mr: "संपर्क" } },
 ];
 
-// Every menu item has its own route: /about, /impact, …
+// Every menu item has its own route: /about, /press, …
 export const navHref = (id: string) => (id === "home" ? "/" : `/${id}`);
 
 export const ui = {
@@ -208,10 +206,10 @@ export const about = {
 export const impact: { title: T; text: T; image?: string }[] = [
   {
     title: { en: "Healthcare", mr: "आरोग्य सेवा" },
-    image: "/images/impact/healthcare.jpg", // Govt. Dental College & Hospital, Nagpur (Dec 2022)
+    image: "/images/gallery/health-camp-2026.jpg", // Mukhyamantri Samuday Arogya Shibir 2026
     text: {
-      en: "As a practising paediatrician, Dr. Gopchade has worked for better child health and access to medical care in rural Marathwada, and brings that experience to health policy debates in Parliament.",
-      mr: "बालरोगतज्ज्ञ म्हणून डॉ. गोपछडे यांनी ग्रामीण मराठवाड्यात बालआरोग्य आणि वैद्यकीय सुविधांच्या उपलब्धतेसाठी काम केले आहे आणि तो अनुभव ते संसदेतील आरोग्य धोरणावरील चर्चांमध्ये मांडतात.",
+      en: "As a practising paediatrician, Dr. Gopchade has worked for better child health and access to medical care in rural Marathwada. During the COVID-19 pandemic he set up medical camps for the public, and he brings that experience to health policy debates in Parliament.",
+      mr: "बालरोगतज्ज्ञ म्हणून डॉ. गोपछडे यांनी ग्रामीण मराठवाड्यात बालआरोग्य आणि वैद्यकीय सुविधांच्या उपलब्धतेसाठी काम केले आहे. कोविड-१९ महामारीच्या काळात त्यांनी जनतेसाठी वैद्यकीय शिबिरे उभारली, आणि तो अनुभव ते संसदेतील आरोग्य धोरणावरील चर्चांमध्ये मांडतात.",
     },
   },
   {
@@ -231,11 +229,35 @@ export const impact: { title: T; text: T; image?: string }[] = [
     },
   },
   {
+    title: { en: "A 500-bed hospital for Nanded", mr: "नांदेडसाठी ५०० खाटांचे रुग्णालय" },
+    image: "/images/impact/healthcare.jpg", // Govt. Dental College & Hospital, Nagpur (Dec 2022)
+    text: {
+      en: "After two years of steady follow-up by Dr. Gopchade and MP Ashok Chavan, the State Government approved a new 500-bed District General Hospital for Nanded in September 2026, along with 594 posts to staff it.",
+      mr: "डॉ. गोपछडे आणि खासदार अशोक चव्हाण यांनी दोन वर्षे सातत्याने केलेल्या पाठपुराव्यानंतर, सप्टेंबर २०२६ मध्ये राज्य सरकारने नांदेडसाठी ५०० खाटांच्या नवीन जिल्हा सामान्य रुग्णालयाला आणि त्यासाठी ५९४ पदांना मंजुरी दिली.",
+    },
+  },
+  {
+    title: { en: "Development of Marathwada", mr: "मराठवाड्याचा विकास" },
+    image: "/images/gallery/pm-modi-memorandum.jpg",
+    text: {
+      en: "In December 2024 he met Prime Minister Narendra Modi and submitted a memorandum for Marathwada's development, including the Nanded–Latur Road railway line and tourism corridors. He continues to pursue a divisional commissionerate, MSME and geo-technology centres, and holy-city status for Nanded.",
+      mr: "डिसेंबर २०२४ मध्ये त्यांनी पंतप्रधान नरेंद्र मोदी यांची भेट घेऊन मराठवाड्याच्या विकासासाठी निवेदन सादर केले, ज्यात नांदेड–लातूर रोड रेल्वेमार्ग आणि पर्यटन कॉरिडॉरचा समावेश होता. नांदेडसाठी विभागीय आयुक्तालय, एमएसएमई व जिओ-टेक्नॉलॉजी केंद्र आणि पवित्र शहराचा दर्जा यांचा ते पाठपुरावा करत आहेत.",
+    },
+  },
+  {
+    title: { en: "MP LEAD Fellowship", mr: "एमपी लीड फेलोशिप" },
+    image: "/images/gallery/mp-lead-vice-president.jpg",
+    text: {
+      en: "He started the MP LEAD Fellowship, a two-month programme that gives young people first-hand experience of governance, public policy and law-making. 40 fellows were chosen from more than 5,000 applicants, 62% of them women, and they met Vice-President C.P. Radhakrishnan and External Affairs Minister S. Jaishankar.",
+      mr: "त्यांनी एमपी लीड फेलोशिप सुरू केली — तरुणांना शासन, सार्वजनिक धोरण आणि कायदे निर्मितीचा प्रत्यक्ष अनुभव देणारा दोन महिन्यांचा उपक्रम. ५,००० हून अधिक अर्जदारांमधून ४० फेलो निवडले गेले, त्यापैकी ६२% महिला; त्यांनी उपराष्ट्रपती सी. पी. राधाकृष्णन आणि परराष्ट्र मंत्री एस. जयशंकर यांची भेट घेतली.",
+    },
+  },
+  {
     title: { en: "Legislator", mr: "विधिमंडळ कार्य" },
     image: "/images/gallery/rajya-sabha-speech.jpg",
     text: {
-      en: "He participates in debates, questions and legislative business in the Upper House, including bills introduced in his name.",
-      mr: "ते वरिष्ठ सभागृहातील चर्चा, प्रश्नोत्तरे आणि विधेयकांच्या कामकाजात सहभागी होतात, ज्यात त्यांनी मांडलेल्या विधेयकांचाही समावेश आहे.",
+      en: "He participates in debates, questions and legislative business in the Upper House. He has introduced eight Private Members' Bills, among them the National Blood Transfusion Bill, the Medical Gases (Quality, Safety and Regulation) Bill and a bill to regulate artificial intelligence in health care and medical education.",
+      mr: "ते वरिष्ठ सभागृहातील चर्चा, प्रश्नोत्तरे आणि विधेयकांच्या कामकाजात सहभागी होतात. त्यांनी आठ खासगी सदस्य विधेयके मांडली आहेत, ज्यात राष्ट्रीय रक्त संक्रमण विधेयक, वैद्यकीय वायू (गुणवत्ता, सुरक्षा व नियमन) विधेयक आणि आरोग्यसेवा व वैद्यकीय शिक्षणातील कृत्रिम बुद्धिमत्तेचे नियमन करणारे विधेयक यांचा समावेश आहे.",
     },
   },
 ];
@@ -287,6 +309,38 @@ export const journey: { year: string; title: T; text: T }[] = [
     text: {
       en: "Elected to the Rajya Sabha from Maharashtra; took office on 3 April 2024 for the term ending 2030.",
       mr: "महाराष्ट्रातून राज्यसभेवर निवड; ३ एप्रिल २०२४ रोजी पदभार, कार्यकाळ २०३०.",
+    },
+  },
+  {
+    year: "2024",
+    title: { en: "BJP in-charge for Manipur", mr: "भाजप प्रभारी, मणिपूर" },
+    text: {
+      en: "Appointed by the BJP in July 2024 to oversee the party's work in Manipur.",
+      mr: "जुलै २०२४ मध्ये मणिपूरमधील पक्षकार्याची जबाबदारी भाजपने सोपवली.",
+    },
+  },
+  {
+    year: "2024",
+    title: { en: "Memorandum to the Prime Minister", mr: "पंतप्रधानांना निवेदन" },
+    text: {
+      en: "Met Prime Minister Narendra Modi on 11 December 2024 and submitted a memorandum for the development of Marathwada.",
+      mr: "११ डिसेंबर २०२४ रोजी पंतप्रधान नरेंद्र मोदी यांची भेट घेऊन मराठवाड्याच्या विकासासाठी निवेदन सादर केले.",
+    },
+  },
+  {
+    year: "2026",
+    title: { en: "MP LEAD Fellowship", mr: "एमपी लीड फेलोशिप" },
+    text: {
+      en: "Launched the MP LEAD Fellowship; 40 young fellows were selected from over 5,000 applicants.",
+      mr: "एमपी लीड फेलोशिपची सुरुवात; ५,००० हून अधिक अर्जदारांमधून ४० तरुण फेलोंची निवड.",
+    },
+  },
+  {
+    year: "2026",
+    title: { en: "500-bed hospital approved for Nanded", mr: "नांदेडसाठी ५०० खाटांच्या रुग्णालयास मंजुरी" },
+    text: {
+      en: "The State Government approved a 500-bed District General Hospital for Nanded after his two years of follow-up.",
+      mr: "दोन वर्षांच्या पाठपुराव्यानंतर राज्य सरकारने नांदेडसाठी ५०० खाटांच्या जिल्हा सामान्य रुग्णालयाला मंजुरी दिली.",
     },
   },
 ];
@@ -376,6 +430,55 @@ export const galleryCategories: { id: string; label: T }[] = [
 // Photos from the MP's and officials' X posts, news coverage and Wikimedia
 // Commons.
 export const gallery: { cat: string; caption: T; src?: string }[] = [
+  // Sep–Aug 2026: frames from the MP's own YouTube channel (@Drajeetgopchade0618).
+  {
+    cat: "parliament",
+    caption: {
+      en: "At CSIR-NPL, New Delhi, on technology for pothole-free roads, with Chairman Shri Laxmikant Bajpai, September 2026",
+      mr: "CSIR-NPL, नवी दिल्ली येथे खड्डेमुक्त रस्त्यांच्या तंत्रज्ञानाची पाहणी, अध्यक्ष श्री लक्ष्मीकांत बाजपेयी यांच्यासोबत, सप्टेंबर २०२६",
+    },
+    src: "/images/gallery/csir-npl-road-visit.jpg",
+  },
+  {
+    cat: "health",
+    caption: {
+      en: "Addressing the Mukhyamantri Community Health Camp 2026, September 2026",
+      mr: "मुख्यमंत्री सामुदायिक आरोग्य शिबिर २०२६ मध्ये संबोधन, सप्टेंबर २०२६",
+    },
+    src: "/images/gallery/health-camp-2026.jpg",
+  },
+  {
+    cat: "people",
+    caption: {
+      en: "District power supply (Mahavitaran) review meeting, Collector's Office, Nanded, September 2026",
+      mr: "जिल्हा महावितरण आढावा बैठक, जिल्हाधिकारी कार्यालय, नांदेड, सप्टेंबर २०२६",
+    },
+    src: "/images/gallery/mahavitaran-review-nanded.jpg",
+  },
+  {
+    cat: "events",
+    caption: {
+      en: "BJP Maharashtra state executive meeting, Pune, September 2026",
+      mr: "भाजपा महाराष्ट्र प्रदेश कार्यकारिणी बैठक, पुणे, सप्टेंबर २०२६",
+    },
+    src: "/images/gallery/bjp-state-executive-pune.jpg",
+  },
+  {
+    cat: "people",
+    caption: {
+      en: "Raksha Bandhan with transgender sisters, Pune, 2026",
+      mr: "तृतीयपंथी भगिनींसोबत रक्षाबंधन सोहळा, पुणे, २०२६",
+    },
+    src: "/images/gallery/raksha-bandhan-pune.jpg",
+  },
+  {
+    cat: "events",
+    caption: {
+      en: "At Takht Sachkhand Sri Hazur Sahib, Nanded, August 2026",
+      mr: "तख्त सचखंड श्री हजूर साहिब, नांदेड, ऑगस्ट २०२६",
+    },
+    src: "/images/gallery/hazur-sahib-2026.jpg",
+  },
   {
     cat: "events",
     // Vice-President's Secretariat photo, via DD News.

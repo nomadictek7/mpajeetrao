@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: { url: "/" },
 };
 
-// The other menu items (About, Impact, Parliament, …) each have their own page.
+// The other menu items (About, Parliament, Press, …) each have their own page.
 export default async function Home() {
   const [posts, content] = await Promise.all([getPosts(), getSiteContent()]);
   return (
