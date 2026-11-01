@@ -206,7 +206,7 @@ export const about = {
 export const impact: { title: T; text: T; image?: string }[] = [
   {
     title: { en: "Healthcare", mr: "आरोग्य सेवा" },
-    image: "/images/gallery/health-camp-2026.jpg", // Mukhyamantri Samuday Arogya Shibir 2026
+    image: "/images/gallery/aiims-nagpur-gadkari.jpg",
     text: {
       en: "As a practising paediatrician, Dr. Gopchade has worked for better child health and access to medical care in rural Marathwada. During the COVID-19 pandemic he set up medical camps for the public, and he brings that experience to health policy debates in Parliament.",
       mr: "बालरोगतज्ज्ञ म्हणून डॉ. गोपछडे यांनी ग्रामीण मराठवाड्यात बालआरोग्य आणि वैद्यकीय सुविधांच्या उपलब्धतेसाठी काम केले आहे. कोविड-१९ महामारीच्या काळात त्यांनी जनतेसाठी वैद्यकीय शिबिरे उभारली, आणि तो अनुभव ते संसदेतील आरोग्य धोरणावरील चर्चांमध्ये मांडतात.",
@@ -353,7 +353,6 @@ export const press: { title: T; date: string; href: string; image?: string }[] =
     },
     date: "2026-10",
     href: "https://newsable.asianetnews.com/india/brics-parliamentary-forum-emphasizes-people-centric-governance-models-articleshow-9wxbr6e",
-    image: "/images/press/rajya-sabha-portrait.jpg",
   },
   {
     title: {
@@ -387,7 +386,6 @@ export const press: { title: T; date: string; href: string; image?: string }[] =
       mr: "खासदारांच्या प्रलंबित निवेदनांवर मुख्य सचिव ४१ आढावा बैठका घेणार",
     },
     date: "2026-05",
-    image: "/images/press/rajya-sabha-portrait.jpg", // official Rajya Sabha photo (sansad.in)
     href: "https://www.freepressjournal.in/mumbai/maharashtra-chief-secretary-rajesh-aggarwal-to-chair-41-review-meetings-over-bjp-mp-dr-ajeet-gopchades-pending-representations",
   },
   {
@@ -430,47 +428,7 @@ export const galleryCategories: { id: string; label: T }[] = [
 // Photos from the MP's and officials' X posts, news coverage and Wikimedia
 // Commons.
 export const gallery: { cat: string; caption: T; src?: string }[] = [
-  // Sep–Aug 2026: frames from the MP's own YouTube channel (@Drajeetgopchade0618).
-  {
-    cat: "parliament",
-    caption: {
-      en: "At CSIR-NPL, New Delhi, on technology for pothole-free roads, with Chairman Shri Laxmikant Bajpai, September 2026",
-      mr: "CSIR-NPL, नवी दिल्ली येथे खड्डेमुक्त रस्त्यांच्या तंत्रज्ञानाची पाहणी, अध्यक्ष श्री लक्ष्मीकांत बाजपेयी यांच्यासोबत, सप्टेंबर २०२६",
-    },
-    src: "/images/gallery/csir-npl-road-visit.jpg",
-  },
-  {
-    cat: "health",
-    caption: {
-      en: "Addressing the Mukhyamantri Community Health Camp 2026, September 2026",
-      mr: "मुख्यमंत्री सामुदायिक आरोग्य शिबिर २०२६ मध्ये संबोधन, सप्टेंबर २०२६",
-    },
-    src: "/images/gallery/health-camp-2026.jpg",
-  },
-  {
-    cat: "people",
-    caption: {
-      en: "District power supply (Mahavitaran) review meeting, Collector's Office, Nanded, September 2026",
-      mr: "जिल्हा महावितरण आढावा बैठक, जिल्हाधिकारी कार्यालय, नांदेड, सप्टेंबर २०२६",
-    },
-    src: "/images/gallery/mahavitaran-review-nanded.jpg",
-  },
-  {
-    cat: "events",
-    caption: {
-      en: "BJP Maharashtra state executive meeting, Pune, September 2026",
-      mr: "भाजपा महाराष्ट्र प्रदेश कार्यकारिणी बैठक, पुणे, सप्टेंबर २०२६",
-    },
-    src: "/images/gallery/bjp-state-executive-pune.jpg",
-  },
-  {
-    cat: "people",
-    caption: {
-      en: "Raksha Bandhan with transgender sisters, Pune, 2026",
-      mr: "तृतीयपंथी भगिनींसोबत रक्षाबंधन सोहळा, पुणे, २०२६",
-    },
-    src: "/images/gallery/raksha-bandhan-pune.jpg",
-  },
+  // Aug 2026: frame from the MP's own YouTube channel (@Drajeetgopchade0618).
   {
     cat: "events",
     caption: {
