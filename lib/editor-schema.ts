@@ -38,7 +38,7 @@ export const sections: SectionDef[] = [
       { key: "shortName", label: "Short name (header)", kind: "bi" },
       { key: "role", label: "Title / role", kind: "bi" },
       { key: "party", label: "Party", kind: "bi" },
-      { key: "portrait", label: "Portrait photo (hero)", kind: "image", help: "Tall photo works best (4:5)." },
+      { key: "portrait", label: "Portrait photo (hero)", kind: "image", help: "First photo of the homepage slideshow. Tall photo works best (4:5)." },
       {
         key: "logo",
         label: "Header logo",
@@ -73,6 +73,23 @@ export const sections: SectionDef[] = [
           { key: "title", label: "Heading", kind: "bi" },
           { key: "text", label: "Text", kind: "biArea" },
         ],
+      },
+    ],
+  },
+  {
+    key: "heroPhotos",
+    title: "Hero photos",
+    description: "Photos that rotate in the homepage slideshow after the portrait photo (set under Profile & Contact).",
+    anchor: "/#home",
+    fields: [
+      {
+        key: "",
+        label: "Photos",
+        kind: "list",
+        itemName: "photo",
+        summary: (x: { src: string }) => x.src.split("/").pop() || "(no photo yet)",
+        newItem: () => ({ src: "" }),
+        item: [{ key: "src", label: "Photo", kind: "image", help: "Tall photos work best (4:5)." }],
       },
     ],
   },

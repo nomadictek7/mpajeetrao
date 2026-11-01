@@ -8,7 +8,14 @@ import { useSite } from "./SiteContent";
 
 export default function Hero() {
   const { t } = usePrefs();
-  const { hero: heroSlides, profile: site, labels } = useSite();
+  const { hero: heroSlides, heroPhotos, profile: site, labels } = useSite();
+  const photos = [site.portrait || "/images/portrait.svg", ...heroPhotos.map((p) => p.src).filter(Boolean)];
+  const [photo, setPhoto] = useState(0);
+  // Wide photos are shown whole over a blurred copy instead of being cropped to the tall frame.
+  const [wide, setWide] = useState<Record<string, boolean>>({});
+  const checkWide = (src: string, img: HTMLImageElement) => {
+    if (img.naturalWidth > img.naturalHeight && !wide[src]) setWide((w) => ({ ...w, [src]: true }));
+  };
   const [sel, setI] = useState(0);
   const i = heroSlides.length ? sel % heroSlides.length : 0;
   const [paused, setPaused] = useState(false);
@@ -21,6 +28,12 @@ export default function Hero() {
     const id = setInterval(() => setI((x) => (x + 1) % count), 6000);
     return () => clearInterval(id);
   }, [count, paused, hovering]);
+
+  useEffect(() => {
+    if (photos.length < 2 || paused || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setPhoto((x) => (x + 1) % photos.length), 5000);
+    return () => clearInterval(id);
+  }, [photos.length, paused]);
 
   async function share() {
     const data = { title: document.title, url: location.href };
@@ -82,16 +95,44 @@ export default function Hero() {
 
         <div className="relative mx-auto w-full max-w-sm">
           <div className="absolute -inset-3 rounded-[2rem] bg-saffron/40 blur-2xl" />
-          {/* Portrait is set from /admin/content → Profile */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={site.portrait || "/images/portrait.svg"}
-            alt={t(site.name)}
-            width={480}
-            height={600}
-            fetchPriority="high"
-            className="relative aspect-[4/5] w-full rounded-[2rem] border-4 border-white/20 object-cover"
-          />
+          {/* Portrait (Profile) first, then the Hero photos — both set from /admin/content */}
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border-4 border-white/20 bg-dark">
+            {photos.map((src, n) => (
+              <div
+                key={src + n}
+                aria-hidden={n !== photo || undefined}
+                className={`absolute inset-0 transition-opacity duration-1000 ${n === photo ? "opacity-100" : "opacity-0"}`}
+              >
+                {wide[src] && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={src} alt="" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-xl" />
+                )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={n === 0 ? t(site.name) : ""}
+                  width={480}
+                  height={600}
+                  fetchPriority={n === 0 ? "high" : undefined}
+                  loading={n === 0 ? undefined : "lazy"}
+                  ref={(img) => {
+                    if (img?.complete) checkWide(src, img);
+                  }}
+                  onLoad={(e) => checkWide(src, e.currentTarget)}
+                  className={`relative h-full w-full ${wide[src] ? "object-contain" : "object-cover"} ${n === 0 ? "" : "object-top"}`}
+                />
+              </div>
+            ))}
+          </div>
+          {photos.length > 1 && (
+            <div className="relative mt-3 flex justify-center gap-2" role="group" aria-label="Photos">
+              {photos.map((_, n) => (
+                <button key={n} aria-pressed={n === photo} aria-label={`Photo ${n + 1}`} onClick={() => setPhoto(n)} className="grid h-6 place-items-center">
+                  <span className={`block h-2 rounded-full transition-all ${n === photo ? "w-6 bg-saffron-bright" : "w-2 bg-white/40"}`} />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

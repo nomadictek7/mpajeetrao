@@ -183,6 +183,13 @@ export const heroSlides: { title: T; text: T }[] = [
   },
 ];
 
+// Shown after the portrait in the homepage photo slideshow.
+export const heroPhotos: { src: string }[] = [
+  { src: "/images/hero/parliament-oct-2026.jpg" }, // Parliament, New Delhi, 27 Oct 2026 (MP's office)
+  { src: "/images/hero/with-pm-modi.jpg" }, // with PM Narendra Modi (cropped from gallery/pm-modi-meeting.jpg)
+  { src: "/images/hero/with-amit-shah.jpg" }, // with Union Home Minister Amit Shah
+];
+
 export const about = {
   heading: { en: "About Dr. Ajeet Gopchade", mr: "डॉ. अजित गोपछडे यांचा परिचय" } as T,
   body: [

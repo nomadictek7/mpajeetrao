@@ -28,6 +28,7 @@ export type SiteContent = {
     linkedin: string;
   };
   hero: { title: T; text: T }[];
+  heroPhotos: { src: string }[];
   about: { heading: T; body: T[]; stats: { value: string; valueMr: string; label: T }[] };
   impact: { title: T; text: T; image: string }[];
   journey: { year: string; title: T; text: T }[];
@@ -68,6 +69,7 @@ export const defaultContent: SiteContent = {
     ...d.site.social,
   },
   hero: d.heroSlides,
+  heroPhotos: d.heroPhotos,
   about: {
     heading: d.about.heading,
     body: d.about.body,
@@ -93,6 +95,7 @@ const shapes: { [K in SectionKey]: unknown } = {
     facebook: "url", x: "url", instagram: "url", youtube: "url", linkedin: "url",
   },
   hero: [{ title: t, text: t }],
+  heroPhotos: [{ src: "img" }],
   about: { heading: t, body: [t], stats: [{ value: "", valueMr: "", label: t }] },
   impact: [{ title: t, text: t, image: "img" }],
   journey: [{ year: "", title: t, text: t }],
