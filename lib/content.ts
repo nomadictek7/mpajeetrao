@@ -161,6 +161,13 @@ export const ui = {
 
 export const heroSlides: { title: T; text: T }[] = [
   {
+    title: { en: "India's Voice at BRICS", mr: "ब्रिक्समध्ये भारताचा आवाज" },
+    text: {
+      en: "At the 12th BRICS Parliamentary Forum in New Delhi, October 2026, he spoke of BRICS nations coming together under India's leadership as a powerful voice of the Global South.",
+      mr: "ऑक्टोबर २०२६ मध्ये नवी दिल्ली येथील १२व्या ब्रिक्स संसदीय मंचात, भारताच्या नेतृत्वाखाली एकत्र आलेले ब्रिक्स देश ग्लोबल साउथचा प्रभावी आवाज बनत असल्याचे त्यांनी मांडले.",
+    },
+  },
+  {
     title: { en: "A Doctor in Public Service", mr: "जनसेवेतील डॉक्टर" },
     text: {
       en: "A paediatrician by training, Dr. Gopchade brings a physician's care to public life — listening first, then acting.",
@@ -185,9 +192,10 @@ export const heroSlides: { title: T; text: T }[] = [
 
 // Shown after the portrait in the homepage photo slideshow.
 export const heroPhotos: { src: string }[] = [
+  { src: "/images/hero/brics-forum-2026.jpg" }, // 12th BRICS Parliamentary Forum, New Delhi, 26 Oct 2026 (MP's office)
   { src: "/images/hero/parliament-oct-2026.jpg" }, // Parliament, New Delhi, 27 Oct 2026 (MP's office)
   { src: "/images/hero/with-pm-modi.jpg" }, // with PM Narendra Modi (cropped from gallery/pm-modi-meeting.jpg)
-  { src: "/images/hero/with-amit-shah.jpg" }, // with Union Home Minister Amit Shah
+  { src: "/images/hero/with-amit-shah.jpg" }, // with Union Home Minister Amit Shah (cropped from gallery/amit-shah-meeting.jpg)
 ];
 
 export const about = {
@@ -225,6 +233,14 @@ export const impact: { title: T; text: T; image?: string }[] = [
     text: {
       en: "He organised doctors and medical professionals as convener of the BJP Doctors' Cell, and as State Vice-President worked to strengthen the party across Maharashtra.",
       mr: "भाजप डॉक्टर सेलचे संयोजक म्हणून त्यांनी डॉक्टर व वैद्यकीय व्यावसायिकांचे संघटन केले आणि प्रदेश उपाध्यक्ष म्हणून संपूर्ण महाराष्ट्रात पक्ष बळकट करण्याचे काम केले.",
+    },
+  },
+  {
+    title: { en: "On the Global Stage", mr: "आंतरराष्ट्रीय व्यासपीठावर" },
+    image: "/images/gallery/brics-forum-2026.jpg",
+    text: {
+      en: "He took part in the 12th BRICS Parliamentary Forum, hosted by the Parliament of India in New Delhi on 26–27 October 2026 under India's BRICS Chairship. Speaking on the concluding day, he said that under India's leadership the member nations have come together as a powerful voice of the Global South, cooperating in science, research and technology.",
+      mr: "भारताच्या ब्रिक्स अध्यक्षतेखाली २६–२७ ऑक्टोबर २०२६ रोजी नवी दिल्ली येथे भारतीय संसदेने आयोजित केलेल्या १२व्या ब्रिक्स संसदीय मंचात ते सहभागी झाले. समारोपाच्या दिवशी बोलताना त्यांनी सांगितले की भारताच्या नेतृत्वाखाली सदस्य देश ग्लोबल साउथचा प्रभावी आवाज म्हणून एकत्र आले असून विज्ञान, संशोधन आणि तंत्रज्ञानात सहकार्य करत आहेत.",
     },
   },
   {
@@ -350,6 +366,14 @@ export const journey: { year: string; title: T; text: T }[] = [
       mr: "दोन वर्षांच्या पाठपुराव्यानंतर राज्य सरकारने नांदेडसाठी ५०० खाटांच्या जिल्हा सामान्य रुग्णालयाला मंजुरी दिली.",
     },
   },
+  {
+    year: "2026",
+    title: { en: "12th BRICS Parliamentary Forum", mr: "१२वा ब्रिक्स संसदीय मंच" },
+    text: {
+      en: "Took part in the 12th BRICS Parliamentary Forum, hosted by the Parliament of India in New Delhi on 26–27 October 2026.",
+      mr: "२६–२७ ऑक्टोबर २०२६ रोजी नवी दिल्ली येथे भारतीय संसदेने आयोजित केलेल्या १२व्या ब्रिक्स संसदीय मंचात सहभाग.",
+    },
+  },
 ];
 
 export const press: { title: T; date: string; href: string; image?: string }[] = [
@@ -360,6 +384,7 @@ export const press: { title: T; date: string; href: string; image?: string }[] =
     },
     date: "2026-10",
     href: "https://newsable.asianetnews.com/india/brics-parliamentary-forum-emphasizes-people-centric-governance-models-articleshow-9wxbr6e",
+    image: "/images/press/brics-forum-2026.jpg",
   },
   {
     title: {
@@ -435,6 +460,14 @@ export const galleryCategories: { id: string; label: T }[] = [
 // Photos from the MP's and officials' X posts, news coverage and Wikimedia
 // Commons.
 export const gallery: { cat: string; caption: T; src?: string }[] = [
+  {
+    cat: "parliament",
+    caption: {
+      en: "At the 12th BRICS Parliamentary Forum, Parliament of India, New Delhi, October 2026",
+      mr: "१२वा ब्रिक्स संसदीय मंच, भारतीय संसद, नवी दिल्ली, ऑक्टोबर २०२६",
+    },
+    src: "/images/gallery/brics-forum-2026.jpg",
+  },
   // Aug 2026: frame from the MP's own YouTube channel (@Drajeetgopchade0618).
   {
     cat: "events",

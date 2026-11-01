@@ -31,7 +31,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (photos.length < 2 || paused || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setInterval(() => setPhoto((x) => (x + 1) % photos.length), 5000);
+    const id = setInterval(() => setPhoto((x) => (x + 1) % photos.length), 2500);
     return () => clearInterval(id);
   }, [photos.length, paused]);
 
